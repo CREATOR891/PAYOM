@@ -18,7 +18,7 @@ Future<void> main() async {
   if (configured) {
     await Supabase.initialize(
       url: _supabaseUrl,
-      anonKey: _supabasePublishableKey,
+      publishableKey: _supabasePublishableKey,
     );
   }
   runApp(PayomApp(isConfigured: configured));
@@ -72,11 +72,11 @@ class ConfigurationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: Center(
           child: Padding(
-            padding: EdgeInsets.all(28),
+            padding: const EdgeInsets.all(28),
             child: ConstrainedBox(
               constraints: BoxConstraints(maxWidth: 440),
               child: Column(
